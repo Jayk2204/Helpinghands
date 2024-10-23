@@ -1,0 +1,352 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;700&family=Rubik:wght@400;500;700&display=swap');
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f5fafd;
+    color: #222;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, #9b5de5, #f15bb5);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+header .logo h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-family: 'Rubik', sans-serif;
+    animation: slideIn 1s ease-in-out;
+    color:aquamarine;
+}
+header .logo h1:hover{
+    color:brown;
+    transition: width 0.3s  ease-in-out;
+}
+
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #ffdc3d;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    position: relative;
+    font-family: 'Rubik', sans-serif;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: #ffdc3d;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color:green;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #4cc9f0, #4361ee);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+    position: relative;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hero h2 {
+    font-size: 3rem;
+    font-family: 'Fira Sans', sans-serif;
+    color: #ffdc3d;
+    animation: popIn 1s ease forwards;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    color: #f5fafd;
+}
+
+.btn-primary {
+    background-color: #ff477e;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: #f15bb5;
+    transform: scale(1.1);
+}
+
+/* Content Sections */
+.content-section {
+    padding: 80px 20px;
+    text-align: center;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #5a189a;
+    font-family: 'Rubik', sans-serif;
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: #6c757d;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Card Styles */
+.card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 250px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    border: 2px solid #9b5de5;
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #f72585;
+    transition: color 0.3s ease;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: linear-gradient(135deg, #ffeb3b, #ff4081);
+    z-index: -1;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover::before {
+    transform: scale(1);
+}
+
+.card:hover h3 {
+    color: green;
+}
+
+.btn-secondary {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+footer h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: 'Rubik', sans-serif;
+    color: #f72585;
+}
+
+footer p {
+    font-size: 1.1rem;
+    color: #adb5bd;
+}
+
+footer form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+footer form input,
+footer form textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+footer form input:focus,
+footer form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px #4caf50;
+}
+
+footer form button {
+    background-color: #ff7e5f;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+footer form button:hover {
+    background-color: #ff5e3a;
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero {
+        padding: 70px 20px;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .content-section h2 {
+        font-size: 2rem;
+    }
+
+    .card {
+        width: 80%;
+    }
+}
